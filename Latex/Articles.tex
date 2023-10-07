@@ -1,0 +1,71 @@
+\documentclass[12pt,a4paper,twoside,final]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{lipsum}
+\usepackage{graphicx} % Required to include images
+\usepackage{hyperref} % Required for hyperlinks
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+% Define the author's name (replace "Author Name" with the actual name)
+\newcommand{\authorname}{Author Name}
+
+% Define the logo (replace "logo.png" with the filename of your logo image)
+%\newcommand{\logo}{logo.png}
+
+% Definir des URLs
+\newcommand{\urlleft}{https://www.example.com}
+
+% Define the volume and issue numbers
+\newcommand{\volum}{Volume}
+\newcommand{\issue}{Issue}
+
+% Définition du style de page personnalisé pour la première page
+\fancypagestyle{firstpage}{
+    \fancyhf{} % Efface les en-têtes et pieds de page par défaut
+    \renewcommand{\headrulewidth}{0.4pt} % Épaisseur de la ligne d'en-tête
+    \renewcommand{\footrulewidth}{0.4pt} % Épaisseur de la ligne de pied de page
+    \fancyhead[L]{\href{\urlleft}{En-tête gauche\\ https://www.example.com}} % Texte à gauche de l'en-tête
+    \fancyhead[R]{En-tête droite} % Texte à droite de l'en-tête
+    %\fancyhead[R]{\includegraphics[height=20pt]{\logo}}
+    \fancyfoot[L]{Pied de page gauche} % Texte à gauche du pied de page
+    \fancyfoot[R]{\thepage~|~\authorname} % Page number | Author of the footer
+}
+
+% Définition du style de page pour les pages paires (même pages)
+\fancypagestyle{evenpages}{
+    \fancyhf{} % Efface les en-têtes et pieds de page par défaut
+    \renewcommand{\headrulewidth}{0pt} % Supprime la ligne d'en-tête de page
+    \renewcommand{\footrulewidth}{0.4pt} % Épaisseur de la ligne de pied de page
+    \fancyfoot[L]{Pied de page gauche} % Texte à gauche du pied de page
+    \fancyfoot[R]{\thepage~|~\authorname} % Page number | Author of the footer
+}
+
+% Définition du style de page pour les pages impaires (pages impaires)
+\fancypagestyle{oddpages}{
+   \fancyhf{} % Efface les en-têtes et pieds de page par défaut
+    \renewcommand{\headrulewidth}{0pt} % Supprime la ligne d'en-tête de page
+    \renewcommand{\footrulewidth}{0.4pt} % Épaisseur de la ligne de pied de page
+    \fancyfoot[L]{\volum\ \issue\ | \thepage} % Footer content for odd pages
+    \fancyfoot[R]{\thepage~|~\authorname} % Page number | Author of the footer
+}
+
+\begin{document}
+% Appliquer le style de page personnalisé à la première page
+\thispagestyle{firstpage} % Appliquer le style de page personnalisé à la première page
+\section{Introduction}
+\lipsum[1-5] % More dummy text
+
+% Appliquer le style de page pour les pages impaires ou paires
+\ifodd\value{page}
+    \pagestyle{oddpages}
+\else
+    \pagestyle{evenpages}
+\fi
+\lipsum[6-30] % More dummy text
+
+\end{document}

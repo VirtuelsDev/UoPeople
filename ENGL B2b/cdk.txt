@@ -1,0 +1,15 @@
+on-demand
+increased scalability
+pp approach
+limited scalability
+enhanced security
+standardized interfaces and
+to provide a centralized
+data sensitivity
+traking and undertanding
+a region is a group of zone, and each zone
+it reduces the risk infrastructure
+the mapping of zones, .. differ between 
+it allows you to specify 
+kubernetes is a container orchestration
+simplifies node
