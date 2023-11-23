@@ -1,0 +1,100 @@
+### Part 1:
+
+#### a. If you are trying to print your name, what happens if you leave out one of the quotation marks or both, and why?
+
+```python
+# Attempting to print a name with missing or mismatched quotation marks
+print("Benewende)  # Missing closing quotation mark
+print(Pierre")  # Missing opening quotation mark
+print(BONKOUNGOU)     # No quotation marks
+```
+
+*Explanation:*
+In Python, strings must be enclosed in matching quotation marks. The first two lines will result in a syntax error due to mismatched or missing quotation marks. The third line will raise a `NameError` because Python interprets `Jim` as a variable, and it's not defined.
+
+#### b. What is the difference between * and ** operators in Python? Explain with the help of an example.
+
+```python
+# Using * and ** operators
+num_list = [2, 4, 6]
+result1 = sum(*num_list)   # Using * to unpack the list
+result2 = sum(**num_list)  # Using **, which is not applicable here
+```
+
+*Explanation:*
+The `*` operator is used for unpacking iterable elements like lists or tuples, while `**` is used for unpacking dictionaries. In the given example, using `*` on the list successfully unpacks its elements for the `sum` function, whereas using `**` on the list is not applicable and results in a `TypeError`.
+
+#### c. In Python, is it possible to display an integer like 09? Justify your answer.
+
+```python
+# Attempting to display an integer like 09
+print(09)
+```
+
+*Explanation:*
+No, it's not possible to display an integer with a leading zero like 09 in Python. Python interprets numbers starting with 0 as octal literals. However, 09 is not a valid octal number, leading to a `SyntaxError`.
+
+#### d. Run the commands type('67') and type(67). What is the difference in the output and why?
+
+```python
+# Using the type() function on a string and an integer
+print(type('67'))
+print(type(67))
+```
+
+*Explanation:*
+The output of `type('67')` will be `<class 'str'>`, indicating that '67' is of type string. The output of `type(67)` will be `<class 'int'>`, indicating that 67 is of type integer.
+
+### Part 2:
+
+#### a. To multiply your age by 2 and display it.
+
+```python
+# Multiplying age by 2 and displaying the result
+age = 25
+result = age * 2
+print(result)
+```
+
+*Explanation:*
+This code multiplies the age variable by 2 and prints the result, allowing for easy modification based on different age values.
+
+#### b. Display the name of the city, country, and continent you are living in.
+
+```python
+# Displaying information about the location
+city = "New York"
+country = "United States"
+continent = "North America"
+print(f"City: {city}\nCountry: {country}\nContinent: {continent}")
+```
+
+*Explanation:*
+This code prints information about the city, country, and continent using formatted strings for better readability.
+
+#### c. To display the examination schedule (i.e., the starting and the ending day) of this term.
+
+```python
+# Displaying examination schedule
+exam_start_date = "2023-12-10"
+exam_end_date = "2023-12-20"
+print(f"Exam Schedule: {exam_start_date} to {exam_end_date}")
+```
+
+*Explanation:*
+The code displays the examination schedule with the start and end dates, providing a clear representation.
+
+#### d. Display the temperature of your country on the day the assignment is attempted by you.
+
+```python
+# Displaying the temperature of the country
+temperature = 28.5  # Example temperature value
+print(f"The temperature is {temperature} degrees Celsius.")
+```
+
+*Explanation:*
+This code prints the temperature of the country, and the value can be adjusted based on the actual temperature.
+
+### Conclusion:
+
+In this assignment, we explored various scenarios involving mistakes and experimented with different Python features. From syntax errors to understanding the use of operators, we gained insights into common pitfalls and best practices. Additionally, we created Python programs to perform specific tasks related to personal information and practical scenarios. This assignment reinforced the importance of making mistakes deliberately to enhance learning and provided hands-on experience in Python programming.
