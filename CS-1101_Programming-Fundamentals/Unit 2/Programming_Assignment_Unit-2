@@ -1,0 +1,62 @@
+**Part 1: Calculating Circumference**
+
+```python
+import math
+
+def print_circum(radius):
+    circumference = 2 * math.pi * radius
+    print(f"The circumference of a circle with radius {radius} is: {circumference:.5f}")
+
+# Call the function with different values for radius
+print_circum(5)
+print_circum(7.5)
+print_circum(10)
+```
+
+**Outputs:**
+```
+The circumference of a circle with radius 5 is: 31.41593
+The circumference of a circle with radius 7.5 is: 47.12389
+The circumference of a circle with radius 10 is: 62.83185
+```
+
+**Explanation:**
+- The function `print_circum` calculates the circumference of a circle using the formula \(2\pi r\) and prints the result rounded to five decimal places.
+- Three calls to the function are made with different radius values (5, 7.5, 10).
+- The outputs show the calculated circumferences for each radius.
+
+**Part 2: Online Store Catalog Function**
+
+```python
+def calculate_discount(item_count):
+    if item_count == 1:
+        return 0
+    elif item_count == 2:
+        return 0.10
+    elif item_count == 3:
+        return 0.25
+
+def calculate_total_cost(item_count, item_price):
+    discount = calculate_discount(item_count)
+    total_cost = item_count * item_price * (1 - discount)
+    return total_cost
+
+# Example: Calculate total cost for purchasing two unique items with a price of $20 each
+item_count = 2
+item_price = 20
+total_cost = calculate_total_cost(item_count, item_price)
+print(f"Total cost for {item_count} items with a price of ${item_price} each: ${total_cost:.2f}")
+```
+
+**Output:**
+```
+Total cost for 2 items with a price of $20 each: $36.00
+```
+
+**Function Features:**
+- The function `calculate_total_cost` calculates the total cost based on the number of items and their price, considering different discount scenarios.
+- The function `calculate_discount` determines the discount percentage based on the number of items purchased.
+- The example demonstrates calculating the total cost for purchasing two unique items with a price of $20 each, applying a 10% discount.
+
+**References:**
+- Downey, A. (2015). Think Python: How to think like a computer scientist. Green Tree Press. [Link](https://greenteapress.com/thinkpython2/thinkpython2.pdf)
